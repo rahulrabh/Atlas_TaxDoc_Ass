@@ -1,5 +1,6 @@
 ## database
 
+```text
 clients
    │
    └── tax_cases
@@ -20,18 +21,20 @@ clients
                  ├── document_classifications
                  │
                  └── document_reviews
+```
 
 ### clients - Represents the actual customer
-
+```text
 clients
 ────────────────────────
 id              UUID PK
 name            VARCHAR
 created_at      TIMESTAMP
 updated_at      TIMESTAMP
+```
 
 ### tax_cases - Represents one tax return for one client
-
+```text
 tax_cases
 ────────────────────────
 id              UUID PK
@@ -41,10 +44,11 @@ filing_status   VARCHAR
 created_at      TIMESTAMP
 updated_at      TIMESTAMP
 
-- Relationship: Client 1 ─────── N TaxCases
+Relationship: Client 1 ─────── N TaxCases
+```
 
 ### people - People participating in that tax case
-
+```text
 people
 ────────────────────────
 id              UUID PK
@@ -54,10 +58,12 @@ role            VARCHAR
 created_at      TIMESTAMP
 updated_at      TIMESTAMP
 
-- Relationship: TaxCase 1 ─────── N People
+Relationship: TaxCase 1 ─────── N People
+```
+
 
 ### employments - Real-world employment facts
-
+```text
 employments
 ────────────────────────
 id              UUID PK
@@ -68,10 +74,12 @@ end_date        DATE NULL
 created_at      TIMESTAMP
 updated_at      TIMESTAMP
 
-- Relationship: Person 1 ─────── N Employments
+Relationship: Person 1 ─────── N Employments
+```
+
 
 ### requirements - This is the heart of the system
-
+```text
 requirements
 ────────────────────────
 id              UUID PK
@@ -86,14 +94,15 @@ tax_year        INTEGER
 created_at      TIMESTAMP
 updated_at      TIMESTAMP
 
-- Examples: W-2
+Example: W-2
             person_id = Rahul
             employment_id = Company A
             document_type = W2
             tax_year = 2025
+```
 
 ### documents - The actual uploaded files
-
+```text
 documents
 ────────────────────────
 id                  UUID PK
@@ -107,9 +116,11 @@ processing_status   VARCHAR
 
 created_at          TIMESTAMP
 updated_at          TIMESTAMP
+```
+
 
 ### document_classifications - What the AI believes about a document
-
+```text
 document_classifications
 ────────────────────────
 id                  UUID PK
@@ -127,15 +138,16 @@ model               VARCHAR
 
 created_at          TIMESTAMP
 
-- Multiple classifications can exist for one document
+Multiple classifications can exist for one document
     Document 1
         │
         ├── Classification 1
         ├── Classification 2
         └── Classification 3
+```
 
 ### requirement_document_matches - Connects actual documents to expected requirements
-
+```text
 requirement_document_matches
 ──────────────────────────────
 id                  UUID PK
@@ -148,9 +160,10 @@ confidence          DECIMAL
 
 created_at          TIMESTAMP
 updated_at          TIMESTAMP
+```
 
 ### requirement_decisions - Stores accountant decisions
-
+```text
 requirement_decisions
 ────────────────────────
 id                  UUID PK
@@ -161,9 +174,10 @@ reason              TEXT NULL
 
 created_at          TIMESTAMP
 created_by          UUID NULL
+```
 
 ### document_reviews - Human review of uncertain documents
-
+```text
 document_reviews
 ────────────────────────
 id                  UUID PK
@@ -176,3 +190,4 @@ notes               TEXT NULL
 
 created_at          TIMESTAMP
 reviewed_at         TIMESTAMP NULL
+```
