@@ -4,7 +4,7 @@ from django.db import models
 
 class Person(BaseModel):
     class Role(models.TextChoices):
-        PRIMARY_TAXPAYER = 'PRIMARY', 'Primary Taxpayer'
+        TAXPAYER = 'PRIMARY', 'Primary Taxpayer'
         SPOUSE = 'SPOUSE', 'Spouse'
         DEPENDENT = 'DEPENDENT', 'Dependent'
 

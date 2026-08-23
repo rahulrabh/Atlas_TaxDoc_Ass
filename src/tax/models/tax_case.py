@@ -5,8 +5,8 @@ from django.db import models
 class TaxCase(BaseModel):
     class FilingStatus(models.TextChoices):
         SINGLE = 'SINGLE', 'Single'
-        MARRIED_FILING_JOINTLY = 'MFJ', 'Married Filing Jointly'
-        MARRIED_FILING_SEPARATELY = 'MFS', 'Married Filing Separately'
+        MARRIED_JOINTLY = 'MFJ', 'Married Filing Jointly'
+        MARRIED_SEPARATELY = 'MFS', 'Married Filing Separately'
         HEAD_OF_HOUSEHOLD = 'HOH', 'Head of Household'
 
     client = models.ForeignKey(
