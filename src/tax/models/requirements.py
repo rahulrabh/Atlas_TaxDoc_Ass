@@ -1,9 +1,9 @@
-from django.db import models
 from .base import BaseModel
 from .employment import Employment
 from .person import Person
 from .tax_case import TaxCase
 
+from django.db import models
 
 class RequirementDocumentType(models.TextChoices):
     FORM_1040 = "FORM_1040", "Form 1040"

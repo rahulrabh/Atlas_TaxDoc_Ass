@@ -1,5 +1,6 @@
 from .base import BaseModel
 from .tax_case import TaxCase
+
 from django.db import models
 
 class Person(BaseModel):

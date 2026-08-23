@@ -1,5 +1,6 @@
 from .base import BaseModel
 from .client import Client
+
 from django.db import models
 
 class TaxCase(BaseModel):

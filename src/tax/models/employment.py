@@ -1,5 +1,6 @@
 from .base import BaseModel
 from .person import Person
+
 from django.db import models
 
 class Employment(BaseModel):
