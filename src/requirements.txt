@@ -1,0 +1,8 @@
+asgiref==3.11.1
+Django==4.2.30
+djangorestframework==3.16.1
+psycopg==3.2.13
+psycopg-binary==3.2.13
+psycopg-pool==3.2.8
+sqlparse==0.5.5
+typing_extensions==4.16.0
