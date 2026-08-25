@@ -9,3 +9,7 @@ from .document_classification import (
     DocumentClassification,
     DocumentClassificationStatus,
 )
+from .requirement_document_match import (
+    RequirementDocumentMatch,
+    RequirementDocumentMatchStatus,
+)
