@@ -5,3 +5,7 @@ from .employment import Employment
 from .requirements import Requirement
 from .requirements import RequirementDocumentType
 from .document import Document, DocumentProcessingStatus
+from .document_classification import (
+    DocumentClassification,
+    DocumentClassificationStatus,
+)
