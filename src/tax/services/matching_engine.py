@@ -2,9 +2,7 @@ from decimal import Decimal
 from django.db import transaction
 
 from tax.models import (
-    DocumentClassification,
     DocumentClassificationStatus,
-    Requirement,
     RequirementDocumentMatch,
     RequirementDocumentMatchStatus,
 )

@@ -9,6 +9,7 @@ class RequirementDocumentType(models.TextChoices):
     FORM_1040 = "FORM_1040", "Form 1040"
     GOVERNMENT_ID = "GOVERNMENT_ID", "Government ID"
     W2 = "W2", "W-2"
+    UNKNOWN = "UNKNOWN", "Unknown"
 
 
 class Requirement(BaseModel):
