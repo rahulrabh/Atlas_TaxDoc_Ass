@@ -6,6 +6,10 @@ from tax.api.collection_status import (
 from tax.api.document_review import (
     DocumentReviewAPIView,
 )
+from tax.api.document_review_resolution import (
+    DocumentReviewResolutionAPIView,
+)
+from tax.api.tax_cases import TaxCaseListAPIView
 
 """
 URL configuration for config project.
@@ -44,6 +48,16 @@ urlpatterns = [
         "api/tax-cases/<uuid:tax_case_id>/reviews/",
         DocumentReviewAPIView.as_view(),
         name="document-review",
+    ),
+    path(
+        "api/documents/<uuid:document_id>/classification/",
+        DocumentReviewResolutionAPIView.as_view(),
+        name="document-review-resolution",
+    ),
+    path(
+        "api/tax-cases/",
+        TaxCaseListAPIView.as_view(),
+        name="tax-case-list",
     ),
     
 ]
