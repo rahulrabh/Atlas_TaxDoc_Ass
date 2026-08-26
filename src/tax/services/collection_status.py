@@ -2,8 +2,18 @@ from tax.models import (
     DocumentClassificationStatus,
     Requirement,
     RequirementDocumentMatch,
-    DocumentClassification
+    DocumentClassification,
+    Client,
+    Document,
+    DocumentClassification,
+    DocumentClassificationStatus,
+    DocumentClassificationStatus,
+    DocumentProcessingStatus,
+    DocumentClassification,
+    RequirementDocumentMatch,
+    RequirementDocumentMatchStatus,
 )
+
 
 def get_collection_status(tax_case):
     requirements = Requirement.objects.filter(

@@ -1,4 +1,11 @@
 from django.urls import include, path
+from tax.api.documents import DocumentUploadAPIView
+from tax.api.collection_status import (
+    CollectionStatusAPIView,
+)
+from tax.api.document_review import (
+    DocumentReviewAPIView,
+)
 
 """
 URL configuration for config project.
@@ -23,4 +30,20 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include("tax.api.urls"),
     ),
+    path(
+    "api/tax-cases/<uuid:tax_case_id>/documents/",
+    DocumentUploadAPIView.as_view(),
+    name="document-upload",
+    ),
+    path(
+        "api/tax-cases/<uuid:tax_case_id>/collection-status/",
+        CollectionStatusAPIView.as_view(),
+        name="collection-status",
+    ),
+    path(
+        "api/tax-cases/<uuid:tax_case_id>/reviews/",
+        DocumentReviewAPIView.as_view(),
+        name="document-review",
+    ),
+    
 ]
